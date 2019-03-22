@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #333;
+	color: #fff;
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+}
+.slider {
+	position: relative;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity .4s ease-in;
+}
+.slide.current {
+	opacity: 1;
+}
+.slide .content {
+	position: absolute;
+	bottom: 70px;
+	left: -600px;
+	width: 600px;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #333;
+	opacity: 0;
+	padding: 35px;
+}
+.slide.current .content {
+	transition: all 0.7s ease-in-out 0.3s;
+	opacity: 1;
+	transform: translateX(600px);
+}
+button#prev {
+	position: absolute;
+	top: 50%;
+	left: 15px;
+}
+button#next {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+}
+button {
+	border: 2px solid #fff;
+	color: #fff;
+	background: transparent;
+	padding: 13px 15px;
+	border-radius: 50%;
+	outline: none;
+}
+button:hover {
+	color: #333;
+	background: #fff;
+}
+.slide.content h1 {
+	margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+	.slide .content {
+		left: 0;
+		bottom: -300px;
+		width: 100%;
+	}
+	.slide.current .content {
+		transform: translateY(-300px);
+	}
+}
+.slide:first-child {
+	background: url(ai-art-big-data-158826.jpg) no-repeat center top / cover;
+}
+.slide:nth-child(2) {
+	background: url(baking-chocolate-close-up-2014693.jpg) no-repeat center top / cover;
+}
+.slide:nth-child(3) {
+	background: url(camera-macro-optics-122400.jpg) no-repeat center top / cover;
+}
+.slide:nth-child(4) {
+	background: url(clouds-country-daylight-371633.jpg) no-repeat center top / cover;
+}
